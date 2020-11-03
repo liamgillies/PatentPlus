@@ -5,14 +5,19 @@ const crypto = require('crypto');
 const multer = require('multer');
 const GridFsStorage = require('multer-gridfs-storage');
 const bodyParser = require('body-parser');
-const { EEXIST } = require('constants');
-const app = express();
 
+const app = express();
+let indexRouter = require('./routes/index');
 //mongo link and connection
 const conn = mongoose.createConnection(process.env.DB_URL);
 
 //initializing gfs
 let gfs;
+conn.once("open", () => {
+    gfs = new mongoose.mongo.GridFSBucket(conn.db, {
+        bucketName: "uploads"
+    });
+});
 
 //storage engine
 const storage = new GridFsStorage({
@@ -35,10 +40,10 @@ const storage = new GridFsStorage({
 
 const upload = multer({ storage });
 
-app.get('/', (req, res) => {
-    res.send('HOMEPAGE SOON TO BE DEVELOPED');
-});
-
+app.get('/', indexRouter);
+app.post('/upload', upload.single('file'), indexRouter);
+app.get('/files/:filename', indexRouter);
+app.post('/files/del/:id', indexRouter); //delete chunks from the db
 
 let PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
