@@ -3,13 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared.module';
-import { WelcomeInfoComponent } from './welcome-info/welcome-info.component';
+import { SharedModule } from './shared/shared.module';
+import { WelcomeInfoComponent } from './pages/welcome-info/welcome-info.component';
+import { InventionNameComponent } from './pages/invention-name/invention-name.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeInfoComponent
+    WelcomeInfoComponent,
+    InventionNameComponent,
   ],
   imports: [
     BrowserModule,

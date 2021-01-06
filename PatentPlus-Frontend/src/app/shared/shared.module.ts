@@ -7,10 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 import {FileUploadModule} from 'primeng/fileupload';
 import {InputTextModule} from 'primeng/inputtext';
 import {RadioButtonModule} from 'primeng/radiobutton';
+import { HeaderComponent } from './header/header.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [HeaderComponent, ProgressBarComponent],
   imports: [
     CommonModule,
   ],
@@ -23,6 +25,8 @@ import {RadioButtonModule} from 'primeng/radiobutton';
     InputTextModule,
     RadioButtonModule,
     ReactiveFormsModule,
+    HeaderComponent,
+    ProgressBarComponent
   ]
 })
 export class SharedModule { }
