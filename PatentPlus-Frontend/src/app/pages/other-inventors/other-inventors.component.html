@@ -1,0 +1,29 @@
+<app-header></app-header>
+<app-progress-bar></app-progress-bar>
+<img id="graphic" src="../../../assets/secondpagegraphic.png">
+<div id="container">
+
+    <div class="header">Tell us about the other inventors.</div>
+
+    <br/>
+    <div class="subtext">What are the names of the other inventors?</div>
+    <br/>
+
+    <form [formGroup]="inventorsForm" (ngSubmit)="addInventor()">
+        <input matInput formControlName="name" #name>
+        <button type="submit" style="display: none" (click)="name.value=''"></button>
+    </form>
+
+    <br/>
+
+    <div>Who is the primary inventor?</div>
+    <div *ngFor="let inventor of inventors">
+        <br/>
+        <button *ngIf="!inventor.primary" class="inventor" (click)="setPrimaryInventor(inventor)">{{inventor.name}}</button>
+        <button *ngIf="inventor.primary" class="inventor-highlighted" (click)="setPrimaryInventor(inventor)">{{inventor.name}}</button>
+    </div>
+
+    <div class="button">
+        <button pButton type="button" class="p-button-raised p-button-rounded" label="Continue"></button>
+    </div>
+</div>

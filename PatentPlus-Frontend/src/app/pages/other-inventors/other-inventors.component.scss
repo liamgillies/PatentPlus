@@ -1,0 +1,47 @@
+#graphic {
+    margin-left: 10%;
+    float: left;
+}
+#container {
+    margin-top: 6vh;
+    height: 70vh;
+    width: 40%;
+    float: left;
+}
+.header {
+    font-weight: bold;
+    font-size: 34px;
+}
+.subtext {
+    font-size: 18px;
+}
+input {
+    width: 80%;
+    padding: 6px 8px;
+    display: inline-block;
+    border: 1px solid #808080;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+.inventor {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: lightgray;
+    border: none;
+    width: 35%;
+    outline: none;
+}
+
+.inventor-highlighted {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: lightblue;
+    border: none;
+    width: 35%;
+    outline: none
+}
+
+.button {
+    position: absolute;
+    bottom: 0;
+}

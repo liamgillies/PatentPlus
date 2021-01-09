@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { WelcomeInfoComponent } from './pages/welcome-info/welcome-info.component';
 import { InventionNameComponent } from './pages/invention-name/invention-name.component';
+import { OtherInventorsComponent } from './pages/other-inventors/other-inventors.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeInfoComponent,
     InventionNameComponent,
+    OtherInventorsComponent,
   ],
   imports: [
     BrowserModule,
