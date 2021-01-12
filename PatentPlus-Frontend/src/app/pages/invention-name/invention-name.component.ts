@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-invention-name',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InventionNameComponent implements OnInit {
 
-  constructor() { }
+  @Input() inventor: any = 
+  {
+    firstName: "Bob"
+  };
+
+  inventionNameForm: FormGroup;
+
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.inventionNameForm = this.fb.group({
+      inventionName: ['', [Validators.required]]
+    })
   }
+
+ 
+
+  
+
+
 
 }
