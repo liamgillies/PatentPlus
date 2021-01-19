@@ -1,12 +1,8 @@
-<app-header></app-header>
-<app-progress-bar></app-progress-bar>
-
 <div class="body p-d-flex p-flex-column p-ai-center">
     <p>What is the name of your invention, {{inventor.firstName}}?</p>
     <form [formGroup]="inventionNameForm">
         <input pInputText formControlName="inventionName">
     </form>
     <img src="../../assets/firstpagegraphic.PNG">
-    <button pButton class="p-button-raised p-button-rounded" label="Continue"></button>
 </div>
 
