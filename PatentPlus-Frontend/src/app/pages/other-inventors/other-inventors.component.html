@@ -8,9 +8,9 @@
         <div class="subtext">What are the names of the other inventors?</div>
         <br/>
 
-        <form [formGroup]="inventorsForm" (ngSubmit)="addInventor()">
+        <form [formGroup]="inventorsForm" (ngSubmit)="addInventor()" class="p-d-flex">
             <input matInput formControlName="name" #name>
-            <button type="submit"  (click)="name.value=''"></button>
+            <button type="submit"  (click)="name.value=''" ></button>
         </form>
 
         <br/>

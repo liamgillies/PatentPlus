@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms'
-import { Inventor } from 'src/app/shared/inventor';
+import { Inventor } from '../../shared/inventor';
 
 @Component({
   selector: 'app-other-inventors',
