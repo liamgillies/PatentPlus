@@ -10,7 +10,7 @@
 
         <form [formGroup]="inventorsForm" (ngSubmit)="addInventor()">
             <input matInput formControlName="name" #name>
-            <button type="submit" style="display: none" (click)="name.value=''"></button>
+            <button type="submit"  (click)="name.value=''"></button>
         </form>
 
         <br/>
