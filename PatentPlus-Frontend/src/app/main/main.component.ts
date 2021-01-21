@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { OtherInventorsComponent } from '../pages/other-inventors/other-inventors.component';
+import { WelcomeInfoComponent } from '../pages/welcome-info/welcome-info.component';
+import {Inventor} from '../shared/inventor';
 
 @Component({
   selector: 'app-main',
@@ -7,6 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
   pageNum: number;
+  inventor: Inventor;
+  otherInventors: boolean;
+
+  @ViewChild(WelcomeInfoComponent)
+  private welcomeInfoComponent: WelcomeInfoComponent;
 
   constructor() { }
 
@@ -15,11 +23,35 @@ export class MainComponent implements OnInit {
   }
 
   nextPage(): void {
-    this.pageNum += 1;
+    if (this.pageNum == 1) {
+      this.getInventor();
+      this.otherInventors = this.welcomeInfoComponent.welcomeInfoForm.controls['otherInventors'].value;
+      if (this.otherInventors) {this.pageNum += 1;}
+      else {this.pageNum += 2;}
+    }
+    else {
+      this.pageNum += 1;
+    }
   }
 
   prevPage(): void {
-    this.pageNum -= 1;
+    if (this.pageNum == 3){
+      if (this.otherInventors==true) {this.pageNum-= 1;}
+      else {this.pageNum -= 2;}
+    }
+    else {
+      this.pageNum -= 1;
+    }
+  }
+
+  getInventor(): void {
+    let form = this.welcomeInfoComponent.welcomeInfoForm;
+    this.inventor = {
+      firstName: form.controls['firstName'].value,
+      middleName: form.controls['middleName'].value,
+      lastName: form.controls['lastName'].value
+    }
+
   }
 
 }

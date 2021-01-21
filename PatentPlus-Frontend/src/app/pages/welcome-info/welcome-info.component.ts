@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class WelcomeInfoComponent implements OnInit {
 
   welcomeInfoForm: FormGroup;
+  nameDisplay: boolean = false;
 
   constructor(private fb: FormBuilder) { }
 
@@ -17,11 +18,15 @@ export class WelcomeInfoComponent implements OnInit {
       firstName: ['', [Validators.required]],
       middleName: '',
       lastName: ['', [Validators.required]],
-      otherInventors: ['', [Validators.required]]
+      otherInventors: [null, [Validators.required]]
 
     })
   }
 
-  otherInventors: boolean;
+  displayName(): void {
+    this.nameDisplay = true;
+  }
+
+
 
 }

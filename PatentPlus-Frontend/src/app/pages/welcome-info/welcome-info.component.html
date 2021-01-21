@@ -6,22 +6,24 @@
 <div class="body p-d-flex">
     <form [formGroup]="welcomeInfoForm" class="responsive-form">
         <p>What is your first name?</p>
-        <input type="text" pInputText class="text" formControlName="firstName">
+        <input type="text" pInputText class="text" formControlName="firstName" (blur)="displayName()">
+        <p *ngIf="nameDisplay" class="subtext">Hey, {{this.welcomeInfoForm.controls['firstName'].value}}!</p>
         <p>What is your middle name?</p>
         <input type="text" pInputText class="text" formControlName="middleName">
+        <p class="subtext">You can leave this blank if you don't have one.</p>
         <p>What is your last name?</p>
         <input type="text" pInputText class="text" formControlName="lastName">
 
         <p>Are there any other inventors?</p>
         <div class="p-d-flex">
-            <input type="radio" value="true"  formControlName="otherInventors">
+            <input type="radio" [value]="true" formControlName="otherInventors">
             <label>Yes</label>
-            <input type="radio" value="false" formControlName="otherInventors">
+            <input type="radio" [value]="false" formControlName="otherInventors">
             <label>No</label>
         </div>
     </form>
 
-    <img src="../../assets/firstpagegraphic.PNG" class="responsive-img">
+    <img src="../../assets/namepageicon.png" class="responsive-img p-as-center">
     
 
 </div>

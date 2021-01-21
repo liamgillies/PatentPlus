@@ -1,11 +1,12 @@
 
 .head {
     text-align: center;
+    margin-top: -3%;
 }
 
 
 .body {
-    margin: 0 0 0 10%;
+    margin-left: 10%;
     width: 90%;
 }
 .text {
@@ -19,8 +20,8 @@ label {
 
 .responsive-img {
     width: 100%;
-    height: auto;
     max-width: 33%;
+    height: auto;
     margin-left: 5%;
 }
 
@@ -28,5 +29,15 @@ label {
     width: 100%;
     height: auto;
     max-width: 40%;
+}
+
+.subtext {
+    color: gray;
+    margin-bottom: 8%;
+    font-size: 14px;
+}
+
+input {
+    border-radius: 15px;
 }
 

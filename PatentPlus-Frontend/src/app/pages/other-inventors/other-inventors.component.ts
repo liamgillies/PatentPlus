@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms'
+import { Inventor } from 'src/app/shared/inventor';
 
 @Component({
   selector: 'app-other-inventors',
@@ -8,6 +9,7 @@ import { FormGroup, FormControl } from '@angular/forms'
 })
 export class OtherInventorsComponent implements OnInit {
 
+  @Input() inventor: Inventor;
   public inventors = []
   private count = 0;
 
@@ -18,6 +20,13 @@ export class OtherInventorsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.inventors.push({
+      name: this.inventor.firstName + " " + this.inventor.middleName + " " + this.inventor.lastName,
+      primary: false,
+      id:this.count
+    })
+    this.count++;
+    this.setPrimaryInventor(this.inventors[0])
   }
 
   addInventor() {

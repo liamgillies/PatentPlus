@@ -1,15 +1,17 @@
-<app-header></app-header>
-<app-progress-bar></app-progress-bar>
-
-<app-welcome-info *ngIf="pageNum==1"></app-welcome-info>
-<app-other-inventors *ngIf="pageNum==2"></app-other-inventors>
-<app-invention-name *ngIf="pageNum==3"></app-invention-name>
-<app-invention-division *ngIf="pageNum==4"></app-invention-division>
-
-<div class="p-d-flex p-jc-center">
-    <button pButton type="button" class="p-button-raised p-button-rounded" 
-     label="Back" (click)="prevPage()" *ngIf="pageNum!=1"></button>
-    <button pButton type="button" class="p-button-raised p-button-rounded" 
-     label="Continue" (click)="nextPage()"></button>
+<div class="p-d-flex p-flex-column">
+    <app-header></app-header>
+    <app-progress-bar class="p-as-center"></app-progress-bar>
+    <div class="main">
+        <app-welcome-info *ngIf="pageNum==1"></app-welcome-info>
+        <app-other-inventors *ngIf="pageNum==2"[inventor]="inventor"></app-other-inventors>
+        <app-invention-name *ngIf="pageNum==3"></app-invention-name>
+        <app-invention-division *ngIf="pageNum==4"></app-invention-division>
+    </div>
+    <div class="p-d-flex p-jc-center">
+        <button pButton type="button" class="p-button-raised p-button-rounded" 
+        label="Back" (click)="prevPage()" *ngIf="pageNum!=1"></button>
+        <button pButton type="button" class="p-button-raised p-button-rounded" 
+        label="Continue" (click)="nextPage()"></button>
+    </div>
 </div>
 

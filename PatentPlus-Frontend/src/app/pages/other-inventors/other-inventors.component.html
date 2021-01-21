@@ -1,23 +1,25 @@
-<img id="graphic" src="../../../assets/secondpagegraphic.png">
-<div id="container">
+<div class="p-d-flex p-jc-center">
+    <img id="graphic" src="../../../assets/otherinventorsgraphic.png">
+    <div id="container">
 
-    <div class="header">Tell us about the other inventors.</div>
+        <div class="header">Tell us about the other inventors.</div>
 
-    <br/>
-    <div class="subtext">What are the names of the other inventors?</div>
-    <br/>
-
-    <form [formGroup]="inventorsForm" (ngSubmit)="addInventor()">
-        <input matInput formControlName="name" #name>
-        <button type="submit" style="display: none" (click)="name.value=''"></button>
-    </form>
-
-    <br/>
-
-    <div>Who is the primary inventor?</div>
-    <div *ngFor="let inventor of inventors">
         <br/>
-        <button *ngIf="!inventor.primary" class="inventor" (click)="setPrimaryInventor(inventor)">{{inventor.name}}</button>
-        <button *ngIf="inventor.primary" class="inventor-highlighted" (click)="setPrimaryInventor(inventor)">{{inventor.name}}</button>
+        <div class="subtext">What are the names of the other inventors?</div>
+        <br/>
+
+        <form [formGroup]="inventorsForm" (ngSubmit)="addInventor()">
+            <input matInput formControlName="name" #name>
+            <button type="submit" style="display: none" (click)="name.value=''"></button>
+        </form>
+
+        <br/>
+
+        <div>Who is the primary inventor?</div>
+        <div *ngFor="let inventor of inventors">
+            <br/>
+            <button *ngIf="!inventor.primary" class="inventor" (click)="setPrimaryInventor(inventor)">{{inventor.name}}</button>
+            <button *ngIf="inventor.primary" class="inventor-highlighted" (click)="setPrimaryInventor(inventor)">{{inventor.name}}</button>
+        </div>
     </div>
 </div>

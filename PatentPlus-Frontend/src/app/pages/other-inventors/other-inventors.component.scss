@@ -1,16 +1,6 @@
-#graphic {
-    margin-left: 10%;
-    float: left;
-}
-#container {
-    margin-top: 6vh;
-    height: 70vh;
-    width: 40%;
-    float: left;
-}
 .header {
     font-weight: bold;
-    font-size: 34px;
+    font-size: 32px;
 }
 .subtext {
     font-size: 18px;
@@ -39,5 +29,9 @@ input {
     border: none;
     width: 35%;
     outline: none
+}
+
+img {
+    margin-right: 2%;
 }
 
