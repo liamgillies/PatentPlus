@@ -1,8 +1,8 @@
 <div class="body p-d-flex p-flex-column p-ai-center">
-    <p>What is the name of your invention, {{inventor.firstName}}?</p>
-    <form [formGroup]="inventionNameForm">
-        <input pInputText formControlName="inventionName">
+    <p>What is the name of your invention, {{inventorname}}?</p>
+    <form [formGroup]="inventionNameForm" class="p-d-flex" >
+        <input pInputText formControlName="inventionName" class="p-jc-center">
     </form>
-    <img src="../../assets/firstpagegraphic.PNG">
+    <img src="../../assets/inventionname.png">
 </div>
 

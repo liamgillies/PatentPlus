@@ -8,10 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class InventionNameComponent implements OnInit {
 
-  @Input() inventor: any = 
-  {
-    firstName: "Bob"
-  };
+  @Input() inventorname;
 
   inventionNameForm: FormGroup;
 

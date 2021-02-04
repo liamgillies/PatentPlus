@@ -50,4 +50,8 @@ export class OtherInventorsComponent implements OnInit {
     })
   }
 
+  removeInventor(index): void {
+    this.inventors.splice(index, 1);
+  }
+
 }

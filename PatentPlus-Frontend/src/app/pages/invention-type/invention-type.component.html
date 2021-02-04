@@ -1,0 +1,12 @@
+<div class="p-d-flex p-flex-column p-ai-center">
+    <h2>What type of invention is {{inventionName}}?</h2>
+    <div class="images p-d-flex p-jc-center">
+        <img src="../../../assets/invention-type/method.png" (click)="other(false)">
+        <img src="../../../assets/invention-type/physicalproduct.png" (click)="other(false)">
+        <img src="../../../assets/invention-type/other.png" (click)="other(true)">
+    </div>
+    <div *ngIf="otherType">
+        <p>Tell us what type of invention {{inventionName}} is.</p>
+        <input pInputText type="text">
+    </div>
+</div>

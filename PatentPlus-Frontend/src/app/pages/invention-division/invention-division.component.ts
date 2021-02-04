@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./invention-division.component.scss']
 })
 export class InventionDivisionComponent implements OnInit {
-  divisions: any[] = ["Chemistry", "Mechancial Engineering", 1, 2, 3, 4]
+  divisions: any[] = ["Chemistry", "ChemicalEngineering", "MechanicalEngineering", "ComputerScience", "DiagnosticImaging", "Other"];
+  selectedDivision: string;
 
   constructor() { }
 
@@ -15,6 +16,10 @@ export class InventionDivisionComponent implements OnInit {
 
   logDivision(divison: any): void {
     console.log(divison)
+  }
+
+  selectDivision(division): void {
+    this.selectedDivision = division;
   }
 
   
