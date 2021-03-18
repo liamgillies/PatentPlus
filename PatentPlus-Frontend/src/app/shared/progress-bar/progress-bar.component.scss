@@ -1,8 +1,21 @@
 .progress-bar {
     width: 80%;
     height: 30px;
-    background-color: lightblue;
-    margin: auto;
+    margin-top: 1%;
+}
+
+.filled-bar{
+    background-color: #c0e1ef;
+    border-radius: 50px 0 0 50px;
+}
+
+.completely-filled {
+    border-radius: 50px;
+}
+
+.empty-bar{
+    background-color: #ddeff7;
+    border-radius: 0 50px 50px 0;
 }
 
 img {
@@ -10,3 +23,5 @@ img {
     max-width: 80%;
     margin: auto;
 }
+
+

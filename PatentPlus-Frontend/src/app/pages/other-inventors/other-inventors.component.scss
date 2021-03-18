@@ -15,20 +15,25 @@ input {
 }
 .inventor {
     padding: 10px;
-    border-radius: 10px 0px 0px 10px;
-    background-color: lightgray;
+    border-radius: 20px 0px 0px 20px;
     border: none;
     width: 100%;
     outline: none;
+    background-color: white;
 }
 
 .inventor-highlighted {
     padding: 10px;
-    border-radius: 10px 0px 0px 10px;
-    background-color: lightblue;
+    border-radius: 20px 0px 0px 20px;
     border: none;
     width: 100%;
-    outline: none
+    outline: none;
+    background-color: var(--primary);
+}
+
+.inventor-shadow {
+    box-shadow: 0 0 5px 2px #bbb;
+    border-radius: 20px;
 }
 
 img {
@@ -42,16 +47,21 @@ img {
 }
 
 .remove-btn, .highlighted-remove-btn {
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 20px 20px 0px;
     width: 20%;
+    border: none;
+    border-left: 2px solid black;
 }
 
+
+
+
 .remove-btn {
-    background-color: lightgray;
+    background-color: white;
 }
 
 .highlighted-remove-btn {
-    background-color: lightblue;
+    background-color: var(--primary);
 }
 
 .btn-container {

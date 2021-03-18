@@ -22,6 +22,12 @@ export class InventionDivisionComponent implements OnInit {
     this.selectedDivision = division;
   }
 
+  checkSelected(division): Object {
+    if (division == this.selectedDivision) {
+      return {'background-color': 'yellow'}
+    }
+    else return {}
+  }
   
 
 }

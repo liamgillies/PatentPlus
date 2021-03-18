@@ -21,7 +21,7 @@
         <div class="p-d-flex p-flex-wrap">
             <div *ngFor="let inventor of inventors; let i = index" class="btn-container">
                 <br/>
-                <div class="p-d-flex">
+                <div class="p-d-flex inventor-shadow">
                     <button [ngClass]="inventor.primary?'inventor-highlighted':'inventor'" 
                     (click)="setPrimaryInventor(inventor)">{{inventor.name}}</button>
                     <button [ngClass]="inventor.primary?'highlighted-remove-btn':'remove-btn'" (click)=removeInventor(i)>

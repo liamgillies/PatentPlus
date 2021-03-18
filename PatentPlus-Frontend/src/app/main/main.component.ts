@@ -14,6 +14,8 @@ export class MainComponent implements OnInit {
   inventor: Inventor;
   otherInventors: boolean;
   inventionName: string;
+  progressBarCurrent: number;
+  progressBarTotal: number;
 
   @ViewChild(WelcomeInfoComponent)
   private welcomeInfoComponent: WelcomeInfoComponent;
@@ -23,10 +25,13 @@ export class MainComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.pageNum = 6;
+    this.pageNum = 1;
+    this.progressBarCurrent = 1;
+    this.progressBarTotal = 4;
   }
 
   nextPage(): void {
+    this.incrementProgressBar();
     switch (this.pageNum) {
       case 1:
         this.getInventor();
@@ -38,12 +43,12 @@ export class MainComponent implements OnInit {
         this.inventionName = this.inventionNameComponent.inventionNameForm.controls['inventionName'].value;
         break;
     }
-    
     this.pageNum += 1;
     
   }
 
   prevPage(): void {
+    this.decrementProgressBar();
     if (this.pageNum == 3){
       if (!this.otherInventors) {this.pageNum-= 1;}
     }
@@ -59,6 +64,45 @@ export class MainComponent implements OnInit {
       lastName: form.controls['lastName'].value
     }
 
+  }
+
+  incrementProgressBar(): void {
+    switch (this.pageNum) {
+      case 1: 
+        this.otherInventors = this.welcomeInfoComponent.welcomeInfoForm.controls['otherInventors'].value;
+        this.progressBarCurrent += this.otherInventors ? 1 : 2;
+        break;
+      
+      case 4:
+        this.progressBarCurrent = 1;
+        this.progressBarTotal = 3;
+        break;
+
+      default: 
+        this.progressBarCurrent += 1;
+        break;
+
+      
+
+    }
+
+  }
+
+  decrementProgressBar(): void {
+    switch (this.pageNum) {
+      case 3: 
+        this.progressBarCurrent -= this.otherInventors ? 1 : 2;
+        break;
+      
+      case 5:
+        this.progressBarCurrent = 4;
+        this.progressBarTotal = 4;
+        break;
+
+      default: 
+        this.progressBarCurrent -= 1;
+        break;
+    }
   }
 
 }

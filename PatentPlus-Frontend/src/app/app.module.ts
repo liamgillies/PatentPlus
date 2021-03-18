@@ -10,7 +10,8 @@ import { OtherInventorsComponent } from './pages/other-inventors/other-inventors
 import { InventionDivisionComponent } from './pages/invention-division/invention-division.component';
 import { EndOverviewComponent } from './pages/end-overview/end-overview.component';
 import { MainComponent } from './main/main.component';
-import { InventionTypeComponent } from './pages/invention-type/invention-type.component'
+import { InventionTypeComponent } from './pages/invention-type/invention-type.component';
+import { AuthComponent } from './pages/auth/auth.component'
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { InventionTypeComponent } from './pages/invention-type/invention-type.co
     EndOverviewComponent,
     MainComponent,
     InventionTypeComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

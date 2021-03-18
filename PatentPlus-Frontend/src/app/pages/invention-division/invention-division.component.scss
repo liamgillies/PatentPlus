@@ -1,6 +1,11 @@
+.division-img {
+    width: 29%;
+    margin: 1% 2%;
+}
+
 img {
     width: 100%;
-    margin: 1% 4%;
+    height: auto;
 }
 
 .divisions-container {
@@ -10,4 +15,5 @@ img {
 
 .selected {
     border: 2px solid black;
+
 }

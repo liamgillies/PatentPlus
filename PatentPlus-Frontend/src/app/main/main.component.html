@@ -1,11 +1,11 @@
-<div class="p-d-flex p-flex-column">
-    <app-header></app-header>
-    <app-progress-bar class="p-as-center"></app-progress-bar>
+<div class="p-d-flex p-flex-column p-ai-center">
+    <app-header class="header"></app-header>
+    <app-progress-bar [currentPageNum]="progressBarCurrent" [totalPageNum]="progressBarTotal"></app-progress-bar>
     <div class="main">
         <app-welcome-info *ngIf="pageNum==1"></app-welcome-info>
         <app-other-inventors *ngIf="pageNum==2"[inventor]="inventor"></app-other-inventors>
         <app-invention-name *ngIf="pageNum==3" [inventorname]="inventor.firstName"></app-invention-name>
-        <app-end-overview *ngIf="pageNum==4"></app-end-overview>
+        <app-end-overview *ngIf="pageNum==4" [inventionName]='inventionName'></app-end-overview>
         <app-invention-division *ngIf="pageNum==5" ></app-invention-division>
         <app-invention-type *ngIf="pageNum==6" [inventionName]='inventionName'></app-invention-type>
     </div>
