@@ -7,14 +7,21 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class InventionTypeComponent implements OnInit {
   @Input() inventionName: string;
-  otherType: boolean;
+  selectedType: string;
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  other(bool) : void  {
-    this.otherType = bool;
+  selectType(input): void {
+    this.selectedType = input;
+  }
+
+  selected(input): Object {
+    if (this.selectedType==input) {
+      return {'background-color': 'lightyellow', 'box-shadow': 'inset 0 0 8px 2px #cccccc'};
+    }
+    else return {}
   }
 
 }

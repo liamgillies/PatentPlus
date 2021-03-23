@@ -1,11 +1,20 @@
 <div class="p-d-flex p-flex-column p-ai-center">
     <h2>What type of invention is {{inventionName}}?</h2>
     <div class="images p-d-flex p-jc-center">
-        <img src="../../../assets/invention-type/method.png" (click)="other(false)">
-        <img src="../../../assets/invention-type/physicalproduct.png" (click)="other(false)">
-        <img src="../../../assets/invention-type/other.png" (click)="other(true)">
+        <button class="type-btn" (click)="selectType('method')" [ngStyle]="selected('method')">
+            <img src="../../../assets/invention-type/method.png">
+            <p>Method/Process</p>
+        </button>
+        <button class="type-btn" (click)="selectType('product')" [ngStyle]="selected('product')">
+            <img src="../../../assets/invention-type/physicalproduct.png">
+            <p>Physical Product</p>
+        </button>
+        <button class="type-btn" (click)="selectType('other')" [ngStyle]="selected('other')">
+            <img src="../../../assets/invention-type/other.png">
+            <p>Other</p>
+        </button>
     </div>
-    <div *ngIf="otherType">
+    <div *ngIf="selectedType=='other'">
         <p>Tell us what type of invention {{inventionName}} is.</p>
         <input pInputText type="text">
     </div>

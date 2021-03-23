@@ -11,7 +11,8 @@ import { InventionDivisionComponent } from './pages/invention-division/invention
 import { EndOverviewComponent } from './pages/end-overview/end-overview.component';
 import { MainComponent } from './main/main.component';
 import { InventionTypeComponent } from './pages/invention-type/invention-type.component';
-import { AuthComponent } from './pages/auth/auth.component'
+import { AuthComponent } from './pages/auth/auth.component';
+import { EndDetailsComponent } from './pages/end-details/end-details.component'
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AuthComponent } from './pages/auth/auth.component'
     MainComponent,
     InventionTypeComponent,
     AuthComponent,
+    EndDetailsComponent,
   ],
   imports: [
     BrowserModule,

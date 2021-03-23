@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./invention-division.component.scss']
 })
 export class InventionDivisionComponent implements OnInit {
-  divisions: any[] = ["Chemistry", "ChemicalEngineering", "MechanicalEngineering", "ComputerScience", "DiagnosticImaging", "Other"];
+  divisions: any[] = ["Chemistry", "Chemical Engineering", "Mechanical Engineering", "Computer Science", "Diagnostic Imaging", "Other"];
   selectedDivision: string;
 
   constructor() { }
@@ -24,7 +24,7 @@ export class InventionDivisionComponent implements OnInit {
 
   checkSelected(division): Object {
     if (division == this.selectedDivision) {
-      return {'background-color': 'yellow'}
+      return {'background-color': 'lightyellow', 'box-shadow': 'inset 0 0 8px 2px #cccccc'}
     }
     else return {}
   }

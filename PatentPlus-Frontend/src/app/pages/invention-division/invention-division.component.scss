@@ -1,19 +1,16 @@
 .division-img {
-    width: 29%;
-    margin: 1% 2%;
+    margin: 2% 2%;
 }
-
-img {
-    width: 100%;
-    height: auto;
+.division-btn {
+    border-radius: 50%;
+    background: none;
+    border: none;
+    box-shadow: 0 0 8px 2px #cccccc;
+    width: 250px;
+    height: 250px;
+    outline: none;
 }
 
 .divisions-container {
-    width: 60%;
-    margin: auto;
-}
-
-.selected {
-    border: 2px solid black;
-
+    width: 80%;
 }

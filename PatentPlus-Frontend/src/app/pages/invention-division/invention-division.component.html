@@ -1,10 +1,13 @@
 <div class="p-d-flex p-flex-column p-ai-center">
-    <p>What division does your invention belong to?</p>
+    <h2>What division does your invention belong to?</h2>
     <div class="p-d-flex p-flex-wrap p-jc-around divisions-container">
         <div class="division-img" *ngFor="let division of divisions">
-            <img  src="../../assets/invention-divisions/{{division}}.png" 
-            (click)="selectDivision(division)" [ngStyle]="checkSelected(division)">
             <!-- <img src="../../assets/invention-divisions/Chemistry.png" *ngIf="selectedDivision == division"> -->
+            <button class="division-btn p-d-flex p-flex-column p-jc-center p-ai-center" 
+                    (click)="selectDivision(division)" [ngStyle]="checkSelected(division)">
+                <img src="../../assets/invention-divisions/{{division}}.png">
+                <p>{{division}}</p>
+            </button>
         </div>
     </div>
 </div>
